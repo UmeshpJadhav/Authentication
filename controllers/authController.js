@@ -1,0 +1,1 @@
+module.exports.registerUser = function(req, res)  {};
