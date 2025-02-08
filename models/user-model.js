@@ -1,9 +1,6 @@
-const { MongoServerClosedError } = require("mongodb");
-const { default: mongoose } = require("mongoose");
-const mogoose =require("mongoose");
-const passport = require("passport");
+const mongoose = require("mongoose");
 
-const userSchema = mongooseSchema({
+const userSchema = new mongoose.Schema({
       name: {
         type: String,
         required: true
@@ -11,15 +8,12 @@ const userSchema = mongooseSchema({
       email: {
         type: String,
         required: true,
-        unique: true
+        unique: true // ✅ Email should be unique
       },
-      password : {
+      password: {
         type: String,
-        required: true,
-        unique: true
-
+        required: true // ✅ No need for `unique: true`
       }
+});
 
-})
-
-module.exports = mongoose.model("User",userSchema);
+module.exports = mongoose.model("User", userSchema);

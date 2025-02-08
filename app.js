@@ -20,5 +20,5 @@ app.use("/api/auth", authRoutes);
 
 
 
-app.listen(3000);
+app.listen(5000);
 
