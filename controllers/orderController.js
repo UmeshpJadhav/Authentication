@@ -1,4 +1,4 @@
-const Order = require('../models/orderModel');
+const Order = require('../models/order');
 
 // Get all orders
 exports.getOrders = async (req, res) => {
