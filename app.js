@@ -7,6 +7,7 @@ require("dotenv").config();
 const connectDB = require("./config/mogoose-connection");
 const productRoutes = require("./routes/productRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const categoryRoutes = require("./routes/categoryRoutes");
 
 // ✅ Connect to MongoDB
 connectDB();
@@ -26,6 +27,8 @@ app.use(cookieParser());
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/cart', categoryRoutes);
+
 
 // ✅ Start Server
 app.listen(3000, () => {
